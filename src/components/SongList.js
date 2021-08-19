@@ -1,29 +1,44 @@
-import React, {useState} from 'react'; 
+import React, {useState, useEffect} from 'react'; 
 import SongCard from './SongCards/SongCard';
+import axios from 'axios'; 
+import PropTypes from 'prop-types';
 
 const SongList = (props) => {
-    const [songs, setSongs] = useState('');
+const [songs, setSongs] =useState([])
 
-    /* fetch("https://api-stg.jam-community.com/song/trending",
-    {
-        "method" : "GET",
-    }).then(response => response.json())
-    .then(response=> {
-        console.log(response)
-    }).catch(err => {
-        console.log(err)
-    }); */
+    useEffect(()=> {
+        axios.get("https://api-stg.jam-community.com/song/trending")
+        .then(res => {
+            console.log(res)
+            setSongs(res.data)
+        })
+        .catch(err => {
+            console.log(err)
+        })
+    }, []);
     
     return (  
-        <div>
-            <h1> List of Songs </h1>
+        <div className="SongList">
             <ul> 
-                <li> <SongCard/> </li>
-                <li> <SongCard/> </li>
-                <li> <SongCard/> </li>
+                {songs.map(song => (
+                <li key={song.id}> 
+                <SongCard 
+                id={song.id}
+                name={song.name}
+                music_file_path = {song.music_file_path}
+                cover_image_path = {song.cover_image_path} /> 
+                </li>
+                ))}
             </ul>
         </div>
     )
+}
+
+SongList.propTypes = {
+    id: PropTypes.string,
+    name: PropTypes.string,
+    music_file_path: PropTypes.string,
+    cover_image_path: PropTypes.string
 }
 
 export default SongList;
