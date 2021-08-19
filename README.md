@@ -1,3 +1,21 @@
+# loudly-task
+
+This app was created by Jamie Stuart as an interview project for the front-end dev team at Loudly. 
+
+Start the app with npm start or yarn start. 
+
+The app includes very simple testing to make sure the app loads.
+
+The following bugs and questions came up:
+
+1) Could not get Like Count to persist because could not access the server to POST the data. Would love to pair with someone on this to see what I did wrong.
+
+2) Did not use Typescript or Flow because I am not familiar with either and didn't have enough time to commit to learning one. Whichever is more useful for the environment at Loudly, I will gladly spend a weekend or evening learning! I added PropTypes on my parent component instead of Typescript/Flow. 
+
+3) I was unsure of best company practices (and best practices in general) for Git because this is my first time working in a collaborative dev environment. I look forward to learning more! 
+
+Please get back to me with any questions jstuart@loudly.com ! 
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -68,4 +86,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# loudly-task
+
+# loudly-task-final
