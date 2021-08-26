@@ -13,8 +13,8 @@ const PlayButton = (props) => {
     }, [isPlaying]);
 
     return (
-        <button
-        onClick={() => togglePlay()} > { isPlaying ? "Pause" : "Play" } 
+        <button onClick={() => togglePlay()} > 
+          { isPlaying ? "Pause" : "Play" } 
         </button>
     )
 }
