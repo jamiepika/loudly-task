@@ -13,8 +13,8 @@ const LikeButton = (props) => {
       setLikeCount(likeCount + 1);
    
       const queryParam = `apikey=${API_KEY}`;
-      const bodyParam = {
-        'ID': id }
+      const bodyParam = new FormData();
+      bodyParam.append('id', id)
       const url = `https://api-stg.jam-community.com/interact/like?${queryParam}`;  
       const headers = {
             'Content-Type' : 'application/x-www-form-urlencoded',
